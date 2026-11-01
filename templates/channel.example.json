@@ -1,0 +1,79 @@
+{
+  "handle": "@yourhandle",
+  "name": "Your Channel",
+  "about": "One line: what the channel covers, e.g. free tools and costs for people building a startup.",
+  "audience": "Who watches, e.g. pre-launch founders and developers in India.",
+  "language": {
+    "style": "Hinglish",
+    "whisper": "hi",
+    "rules": "Hindi words in Devanagari and English words in English in the voice script; Roman Hinglish on screen. Keep business and tech terms in English."
+  },
+  "voice": {
+    "model": "gpt-audio",
+    "voice": "cedar",
+    "persona": "You are a young Indian guy from Delhi. Speak natural, casual Hinglish like Indian tech creators on Instagram: Hindi words with native pronunciation, English words with a natural Indian accent. Friendly, fast, a bit cheeky. Keep pauses short. Say \"GPT\" as \"G P T\". Read the script exactly, word for word. Do not skip, add or remove any words."
+  },
+  "avatar": {
+    "file": "avatar.png",
+    "width": 2048,
+    "height": 2854,
+    "mouth": {
+      "x": 1026,
+      "y": 1064,
+      "width": 268
+    },
+    "skin": "#E9A987",
+    "lip": "#A35B42",
+    "inside": "#5A1E1A"
+  },
+  "colors": {
+    "bg": "#EEF1F8",
+    "dot": "#C3CCE2",
+    "ink": "#1C2A5A",
+    "mute": "#9AA5C2",
+    "primary": "#3358B4",
+    "soft": "#F2B48F",
+    "accent": "#E8892B",
+    "danger": "#D2402C",
+    "highlight": "#F6B23E",
+    "paper": "#F5F3EE",
+    "paperDot": "#DDD9CF",
+    "tape": "rgba(246,178,62,.78)",
+    "blobs": [
+      "#F7C9B4",
+      "#CFDBF6",
+      "#D9ECE0",
+      "#FBE0A8"
+    ]
+  },
+  "reel": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "targetSeconds": [
+      30,
+      38
+    ],
+    "maxScenes": 4,
+    "wordsPerSecond": 3.0
+  },
+  "cta": {
+    "share": "bhejo",
+    "save": "save karo",
+    "commentQuestion": "Tum kaunsa use karte ho? Comment karo."
+  },
+  "hashtags": {
+    "always": [
+      "#yourbrand"
+    ],
+    "pool": [
+      "#startup",
+      "#startupindia",
+      "#saas",
+      "#ai",
+      "#aitools"
+    ],
+    "count": 5
+  },
+  "series": null
+}
