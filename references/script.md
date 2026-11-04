@@ -10,8 +10,30 @@
 ## Topic test (from docs/reel-learnings/learnings.md)
 "Would someone who hasn't launched yet need this today?" Post-launch topics get reframed around a builder's problem, or dropped. One idea per reel.
 
+## Audience match
+The topic must be for the audience Instagram already shows the channel to (see channel.json → audience). A topic for a *different* audience gets tested on your usual viewers first, and they skip it. A "how I make reels" reel on a founder channel got 61% skip. Comment requests are signals, not proof: two comments ≠ demand.
+
+## Hook (the first 3 s decide reach)
+- **About the viewer, never about you.** "Tumhara app kal kitni baar crash hua?" ✅ · "Meri reel pe 32k views" ❌ (61% skip). `check-script` fails a hook with "main/meri/my" and no "tum/you".
+- ≤ 8–10 words, with a number, a tool name, money or "free". No jargon.
+- **On screen in the first 3 s: ≤ 5 words** and no extra labels. Don't replace the headline before 3 s.
+- Write **3 hook options** with different formulas, score each with the rubric below, and show all 3 to the user. They pick; it needs 9+ and no rule broken.
+
+| Score 0–2 each | 0 | 1 | 2 |
+|---|---|---|---|
+| Viewer-first | about us | neutral | "tum / you" + their stake |
+| Concrete | vague | a tool *or* a number | a number / money **and** a known tool or situation |
+| Instant | needs the 2nd sentence | clear by ~2 s | clear from the first 3–4 words |
+| Tight | > 10 words or jargon | 9–10 words | ≤ 8 plain words |
+| Visual proof | text / small card | a generic visual | one big visual that *is* the hook, moving at frame 0 |
+
+Formulas: their pain + a number ("Tumhara app kal kitni baar crash hua?") · money saved ("$299 wala tool, free mein") · stop doing X ("Login khud mat banao") · time saved ("2 hafte ka kaam, 10 minute mein") · hidden cost ("Free hai… jab tak ye bill nahi aata") · before you choose ("Razorpay lene se pehle ye dekho").
+
+## One change at a time
+Change only one of topic type · look · hook style · CTA per reel, and write in the learnings file's Experiments table which one you changed. Change three at once and you can't learn which one hurt.
+
 ## Story shape (30–38 s, at most 4 scenes)
-1. **Hook** (≤ 8–10 words): a number, a tool name, money or "free", in the viewer's own words. No jargon.
+1. **Hook**: see above.
 2. **Tool + free limit** within the first 5 s. Then the second option or the big number.
 3. **The catch**, one line.
 4. **End:** a comment question, then a share line ("Us dost ko bhejo jo…").

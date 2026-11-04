@@ -27,6 +27,11 @@ const hook = (s.caption.match(/^[^.?!]+[.?!]?/) ?? [""])[0].trim();
 const hw = hook.split(/\s+/).filter(Boolean).length;
 hw <= 10 ? ok(`hook ${hw} words: "${hook}"`) : warn(`hook is ${hw} words, aim for ≤ 8–10: "${hook}"`);
 /\d|free|₹|\$|lakh|crore|%/i.test(hook) ? ok("hook has a number / money / 'free'") : warn("hook has no number, money or 'free'; add one, or make sure a tool name is in it");
+// the hook must be about the viewer: "Meri reel pe 32k views" passed every other check and got 61% skip
+const self = /\b(main|mai|meri|mera|mere|maine|mujhe|hum|humne|hamara|i|i'm|my|me|we|our)\b/i.test(hook);
+const viewer = /\b(tum|tumhara|tumhari|tumhare|tumhe|tumhein|aap|aapka|aapki|apna|apni|you|your)\b/i.test(hook);
+if (self && !viewer) fail(`hook is about us, not the viewer ("${hook}"). Rewrite around "tum / tumhara" + their problem or gain`);
+else viewer ? ok("hook speaks to the viewer") : warn("hook doesn't address the viewer; make sure it names their problem or gain");
 
 const sentences = s.caption.split(/(?<=[.?!])\s+/);
 const tail = sentences.slice(-3).join(" ");

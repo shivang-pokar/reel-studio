@@ -46,11 +46,13 @@ Status flow in the registry: `research → script → approved → voiced → pr
 6. Logos the reels will need → `public/logos/` (ask the user; don't download brand assets without asking).
 
 ## §1 · Idea
-- Read `docs/reel-learnings/learnings.md` first: the topic test, the experiments, and comment requests.
-- Offer 2–4 options with a recommendation: why it should reach people (topic stage, comment demand, broad "X vs Y") and what it tests.
+- Read `docs/reel-learnings/learnings.md` first: the topic test and the experiments.
+- **Topic gate (mandatory):** find outside proof before offering anything. Pick 5–8 peer accounts in the channel's niche, list their recent reels with views, and flag outliers (≥ 2× that account's median). Score each candidate 0–2 on day-1 need, outside proof, audience match, our angle and our own data; show the top 3 (≥ 8/10, no 0) with the evidence next to each score. The user picks.
+- Comments on the channel's own reels are a tiebreaker (+1 at most), never the reason. Two comments asking for "how I make reels" produced a 61% skip reel.
 - Once picked: `node <skill>/scripts/new-reel.mjs <slug> "<working title>" <pre-launch|launch|post-launch>`. This creates every folder and the registry entry.
 
 ## §2 · Research + script → 🛑 gate
+**Hook gate (mandatory):** write 3 hooks with different formulas, score each 0–10 with the rubric in `references/script.md`, show all 3 to the user, and let them pick (≥ 9/10, no hard-rule break). No voice before that.
 Follow `references/script.md`: official sources only, re-verify every number, then write `reels/<N>/script.json` in the story shape (30–38 s, ≤ 4 scenes, hook ≤ 8–10 words with a number/tool/money, comment question at the end).
 Run `node <skill>/scripts/check-script.mjs <N>` and fix FAILs. Show the user the script + checklist result, and say which numbers you re-checked. `status.mjs <N> status=script`.
 **🛑 Stop. Generate nothing until the user approves.** Then `status=approved`.

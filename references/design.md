@@ -21,6 +21,9 @@
 - No "Part N" on screen (leave `series` off).
 - End: the last beats are the comment question (a "comment karo" pill) and the share line (send icon).
 
+## First-3-seconds check (before the preview)
+Render stills at 0.0 s, 1.0 s, 2.0 s and 2.9 s. Each one must have: ≤ 5 words visible, one big visual, no labels or small text, motion from frame 0, and the headline unchanged before 3 s. Show these 4 frames to the user with the preview.
+
 ## Preview gate
 Render one still per scene (frame = a moment when that scene is complete), tile them into a sheet, and show the user **before** the full render:
 ```bash
