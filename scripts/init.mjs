@@ -22,6 +22,7 @@ function copy(from, to) {
 copy(path.join(SKILL, "starter"), ".");
 copy(path.join(SKILL, "templates/channel.example.json"), "channel.json");
 copy(path.join(SKILL, "templates/learnings.md"), "docs/reel-learnings/learnings.md");
+copy(path.join(SKILL, "templates/voice.md"), "docs/voice.md");
 for (const d of ["reels", "out/samples", "public/logos"]) fs.mkdirSync(d, { recursive: true });
 if (!fs.existsSync("reels/index.json")) { fs.writeFileSync("reels/index.json", "[]\n"); copied.push("reels/index.json"); }
 
