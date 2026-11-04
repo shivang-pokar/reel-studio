@@ -27,7 +27,11 @@ The topic must be for the audience Instagram already shows the channel to (see c
 | Tight | > 10 words or jargon | 9–10 words | ≤ 8 plain words |
 | Visual proof | text / small card | a generic visual | one big visual that *is* the hook, moving at frame 0 |
 
-Formulas: their pain + a number ("Tumhara app kal kitni baar crash hua?") · money saved ("$299 wala tool, free mein") · stop doing X ("Login khud mat banao") · time saved ("2 hafte ka kaam, 10 minute mein") · hidden cost ("Free hai… jab tak ye bill nahi aata") · before you choose ("Razorpay lene se pehle ye dekho").
+**Tools:** run `python3 <skill>/tools/hookscore.py hooks.txt` first and drop any hook with a dealbreaker (greeting, preamble, "stop scrolling", nothing concrete). Ignore its 0–100 ranking between decent hooks: it is English-tuned and in its author's own test it picked winners at coin-flip level. Our rubric decides.
+- **The payoff is visible in the first 2 s**, in the voice AND on screen: free, a number, or a tool logo. A bare question ("App bana liya? Ab live kahan karoge?") had no payoff and got 76% skip.
+- Speak to the whole audience, not one stage of it ("App bana liya?" shuts out everyone who hasn't).
+
+More formulas with examples and how each gets ruined: `<skill>/tools/hooks.json` (The Statistic, Cost Confession, Head To Head, Cold Open Demo, The Receipt…). Our own: their pain + a number ("Tumhara app kal kitni baar crash hua?") · money saved ("$299 wala tool, free mein") · stop doing X ("Login khud mat banao") · time saved ("2 hafte ka kaam, 10 minute mein") · hidden cost ("Free hai… jab tak ye bill nahi aata") · before you choose ("Razorpay lene se pehle ye dekho").
 
 ## One change at a time
 Change only one of topic type · look · hook style · CTA per reel, and write in the learnings file's Experiments table which one you changed. Change three at once and you can't learn which one hurt.
@@ -37,6 +41,8 @@ Change only one of topic type · look · hook style · CTA per reel, and write i
 2. **Tool + free limit** within the first 5 s. Then the second option or the big number.
 3. **The catch**, one line.
 4. **End:** a comment question, then a share line ("Us dost ko bhejo jo…").
+
+**Loop:** end on a word from the hook if it fits naturally; `beats.py` checks it. A replay is free reach.
 
 No "Part N" in the voice-over. No warm-up sentences: commenters punish "ghuma kar gyan".
 

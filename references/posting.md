@@ -23,8 +23,14 @@ Experiments (other voices, styles) go in `out/samples/<name>/`, never in a reel 
 - Use the `language.style` from channel.json (Roman Hinglish for Hinglish channels). A few functional emoji as bullets are OK in the caption, but not in the video.
 - Every number in the caption must match the research doc.
 
+## Caption lint (before delivering)
+```bash
+python3 <skill>/tools/caption.py out/reel-NN-slug/caption.txt --keywords "<2 phrases people would search>"
+```
+Fix every FAIL: the first line must fit whole before "... more", and the caption should contain 1–2 phrases people actually type into search (e.g. "free hosting"), which matter more than hashtags now. Links in a caption aren't clickable, so sources are written as plain `domain/path` text (that's fine; it's for trust, not clicks). Then run `tools/humanize.py --report` and keep only the changes that don't touch numbers or brand names. Full guide: `references/caption.md`.
+
 ## Hashtags
-Exactly `hashtags.count` (default 5): everything in `hashtags.always`, 1–2 broad tags from `pool` (#ai, #aitools), and the rest topic-specific (#customersupport, #saas…).
+Exactly `hashtags.count` (default 5; Instagram's cap is 5 per post since 18 Dec 2025): everything in `hashtags.always`, 1–2 broad tags from `pool` (#ai, #aitools), and the rest topic-specific (#customersupport, #saas…).
 
 ## After posting
 `node <skill>/scripts/status.mjs <N> status=posted posted=<YYYY-MM-DD> url=<reel url>`. Remind the user that the day-3 analytics check is due on posted + 3 days.

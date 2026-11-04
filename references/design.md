@@ -8,7 +8,7 @@
    ```
 3. `CollageReel` (src/collage.tsx) takes `beats`: `{ at: <word index>, el: <hero/>, source?: "domain/path" }`. Plan **a new hero visual every 1–2 s** (10–20 beats in a 35 s reel). `idx("Sentry")` finds a word index by text (robust to re-voicing; throws if missing), `f(i)` gives its frame for reveals inside a hero (`<Pop at={f(i)}>`, `Stamp`, `Marker`, `HandNote`).
 4. Also pass `chapters` (label top-left + blob colour), `keys` (word indices that get the yellow marker swipe in the headline), `red` (e.g. "Catch"), `wipeAt` (dot wipe into the catch) and `cues` for pops/markers/dings (sounds in `public/sfx/`). The headline builds itself from the voice, one sentence at a time; override with `groups` if a line runs past 3 rows.
-5. The older "canvas" look (`CanvasReel` in src/canvas.tsx: one dotted canvas with camera glides and a caption bubble) is still there if a creator prefers it.
+5. **Two looks; `channel.json` → `look` picks one.** `canvas` (`CanvasReel` in src/canvas.tsx: dotted canvas, white cards with a navy outline and hard shadow, label pill, avatar bottom-left with a speech-bubble caption) is the look of the channel's 34k breakout reel. `collage` (above) got the same reach in testing (1.6k vs 1.3–2k) and has the ready-made example. Neither look moved reach, so don't switch looks to fix reach; fix the hook and the topic. Change the look only as its own experiment.
 
 ## House style
 - **Collage:** paper + dot grid; a 90 px headline that builds word by word (it is the caption, so keep sentences short: ≤ 3 lines); a yellow marker swipe under 1–2 key words per line; a soft colour blob behind the hero that changes per chapter; tilted white cards with tape and a 12 px hard shadow; red rubber `Stamp`s (FREE, FIXED); the avatar as a white-outlined sticker bottom-right that bounces on every beat. Nunito 800/900; Caveat for handwritten notes. Colours come from `channel.json`.
@@ -17,7 +17,7 @@
 - Hand-drawn emphasis: `Marker` (circle with `roughEllipse`, underline, cross-out) and `HandNote` on the exact word that's spoken.
 - **Real logos** (simple-icons `Brand`, or `<Img src={staticFile("logos/x.png")}>`), and Lucide line icons for everything else. **No emoji** on screen.
 - **Every fact shows its source** (`<Source text="domain/path" />`).
-- Safe zone: headline y 160–470; hero band y 470–1190, ≤ 900 px wide; source line at y 1430. The avatar sticker covers the bottom-right from y 1200, and the Instagram UI covers the bottom and right edge.
+- Safe zone for any text: x 80–850 and y 230–1440 (Instagram's caption, action rail and audio strip cover the rest). Headline y 230–470; hero band y 470–1190, ≤ 900 px wide; source line at y 1430. The avatar sticker covers the bottom-right from y 1200, and the Instagram UI covers the bottom and right edge.
 - No "Part N" on screen (leave `series` off).
 - End: the last beats are the comment question (a "comment karo" pill) and the share line (send icon).
 

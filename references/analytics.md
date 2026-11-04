@@ -21,17 +21,23 @@ Everything lands in `docs/reel-learnings/learnings.md`. The next script is check
 5. Age: the reel page shows "9 h" / "5 d". **Don't judge a reel under 3 days old as final.**
 6. **App-only numbers** (web doesn't show them): ask the user for **skip rate**, **average watch time** and where the retention graph drops (Instagram app → reel → Insights).
 
+The time shown at the top of web Insights ("0:02") is most likely average watch time; confirm in the app. Note the **follower %**: on day 1 a reel shown mostly to followers (> 10%) hasn't been pushed to new people yet.
+
 ## 2 · Compute
-Save % = saves ÷ views × 100 · Share % = shares ÷ views × 100. Add length (`ffprobe`), hook (first sentence of the caption) and the topic's founder stage.
+Save % = saves ÷ views × 100 · Share % = shares ÷ views × 100 · **Hold at 3 s** = 100 − skip rate · **Outlier multiple** = views ÷ the channel's median views (a reel at 2× or more is a real hit, not a normal day). Add length (`ffprobe`), hook (first sentence of the caption) and the topic's founder stage.
 
 ## 3 · Diagnose with this table, not guesses
 | Signal | Problem |
 |---|---|
-| Skip rate above 50% | Hook / first frame |
+| Skip rate above 50% | Hook / first frame. **Above 60% the reel dies** before the topic is tested (76% skip → 207 views) |
 | Skip fine, views low, Save % + Share % low | Topic not useful to this audience |
 | Save % + Share % good, views low | Topic breadth or length (too few full watches) |
 | Retention drops at one point | That scene: cut it |
 | 0 comments | No question at the end |
+| Views and non-follower reach fine, follows per view low | Profile, not the reel: `references/profile.md` |
+| Reels stuck at the same 1–2k for weeks | That's the first test pool. Only Save % + Share % from non-followers get a reel out of it; look at shares first |
+
+With 10+ reels, also run `references/audit.md`: rank by outlier multiple and shares per view, not views, and compare the top and bottom five.
 
 Compare against the reel named in the learnings file's Experiments table.
 **When new data contradicts an earlier conclusion, rewrite the earlier text.** The file must never contradict itself (this happened once: "the hook failed" was disproved by equal skip rates).
