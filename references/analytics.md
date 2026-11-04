@@ -40,7 +40,7 @@ Save % = saves ÷ views × 100 · Share % = shares ÷ views × 100 · **Hold at 
 With 10+ reels, also run `references/audit.md`: rank by outlier multiple and shares per view, not views, and compare the top and bottom five.
 
 Compare against the reel named in the learnings file's Experiments table.
-**When new data contradicts an earlier conclusion, rewrite the earlier text.** The file must never contradict itself (this happened once: "the hook failed" was disproved by equal skip rates).
+**When new data contradicts an earlier conclusion, rewrite the earlier text.** The file must never contradict itself (it happened: "the hook doesn't decide reach" held while every reel sat near 50% skip, then two reels at 63% and 76% skip collapsed to 707 and 207 views, so the rule became "average hooks don't block reach; bad ones kill it").
 
 ## 4 · Update the learnings file
 Scoreboard row (`_pending_` for unknowns), "Last updated" + follower count, new evidence-backed points in sections 2–3, the Experiments result, a per-reel note (newest first), and any newly proven rule in the checklist. Never invent posting dates.

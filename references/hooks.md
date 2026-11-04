@@ -46,7 +46,7 @@ LAST 3s       THE PAYOFF  deliver what the hook promised, then the single ask.
 LAST LINE     THE LOOP    echo one word from the hook so the replay lands clean.
 ```
 
-Length: 15 to 45 seconds is the working range. Reels run to 3 minutes and
+Length: 30 to 38 seconds for Reel Studio channels (our data: 35 s broke out, 46–53 s stalled; the original pack says 15 to 45 seconds). Reels run to 3 minutes and
 almost nobody should use it. Under 7 seconds the loop counts inflate and
 nothing else does.
 

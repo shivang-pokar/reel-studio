@@ -19,7 +19,8 @@ Last updated: – · followers: –
 Starting lessons, carried over from the channel this skill was built on (5 reels, one 32k-view breakout). Replace them with your own as your data comes in:
 1. The **topic stage** mattered most. The one breakout was a "day 1" topic everyone needs (login). Post-launch topics (support, onboarding) were the weakest.
 2. **Length** mattered next. The breakout was 35 s; the rest were 46–53 s.
-3. **Every hook sat at ~50% skip**, so the hook didn't explain the gap, but none was *good* yet. Aim below 40%.
+3. **Average hooks (~50% skip) don't block reach; bad ones kill it.** Five reels sat near 50% and the topic decided reach. Two later reels hit 63% and 76% skip (a hook about the creator, and a question with no payoff) and fell to 707 and 207 views. Aim below 40%.
+7. **The look didn't move reach.** Two different styles got the same 1.3–2k. Fix the hook and topic before the design.
 4. **Dense multi-part formats** ("3 decisions") got the lowest save and share rates.
 5. **About 95% of views come from non-followers**, so "Part N" labels and series in-jokes mean nothing to most viewers.
 6. **Reels with no question at the end got 0 comments.**
@@ -48,8 +49,11 @@ Ask: **"Would someone who hasn't launched yet need this today?"**
 - [ ] One idea per reel (no multi-part lists).
 
 **Hook (goal: skip rate below 40%)**
+- [ ] 3 hook options, scored with the rubric in `references/script.md`; the user picks one (9+).
 - [ ] 1 line, at most about 8 words, with a **number, a tool name or money**.
-- [ ] No jargon in the first 3 s.
+- [ ] **About the viewer** ("tum / you"), never about the creator.
+- [ ] **The payoff is on screen and in the voice within 2 s.** A bare question isn't one.
+- [ ] ≤ 5 words on screen in the first 3 s. No jargon.
 - [ ] **First frame = one big bold line plus one strong visual**, not a small card.
 
 **Body**
@@ -60,7 +64,10 @@ Ask: **"Would someone who hasn't launched yet need this today?"**
 
 **End**
 - [ ] A **comment question** before the share CTA.
-- [ ] Caption includes 1–2 broad hashtags along with the niche ones.
+- [ ] Caption: first line = the hook's promise, 1–2 search phrases, max 5 hashtags (1–2 broad). `tools/caption.py` passes.
+
+**One change at a time**
+- [ ] Change only one of topic type · look · hook style · CTA, and write which in section 8.
 
 ## 7 · How to check analytics (day 3)
 See the reel-studio skill's `references/analytics.md`.

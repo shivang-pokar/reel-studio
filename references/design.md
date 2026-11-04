@@ -8,7 +8,7 @@
    ```
 3. `CollageReel` (src/collage.tsx) takes `beats`: `{ at: <word index>, el: <hero/>, source?: "domain/path" }`. Plan **a new hero visual every 1–2 s** (10–20 beats in a 35 s reel). `idx("Sentry")` finds a word index by text (robust to re-voicing; throws if missing), `f(i)` gives its frame for reveals inside a hero (`<Pop at={f(i)}>`, `Stamp`, `Marker`, `HandNote`).
 4. Also pass `chapters` (label top-left + blob colour), `keys` (word indices that get the yellow marker swipe in the headline), `red` (e.g. "Catch"), `wipeAt` (dot wipe into the catch) and `cues` for pops/markers/dings (sounds in `public/sfx/`). The headline builds itself from the voice, one sentence at a time; override with `groups` if a line runs past 3 rows.
-5. **Two looks; `channel.json` → `look` picks one.** `canvas` (`CanvasReel` in src/canvas.tsx: dotted canvas, white cards with a navy outline and hard shadow, label pill, avatar bottom-left with a speech-bubble caption) is the look of the channel's 34k breakout reel. `collage` (above) got the same reach in testing (1.6k vs 1.3–2k) and has the ready-made example. Neither look moved reach, so don't switch looks to fix reach; fix the hook and the topic. Change the look only as its own experiment.
+5. **Two looks; `channel.json` → `look` picks one.** For `canvas`, keep the same file and data but render `<CanvasReel reel words loudness scenes end cues />` from src/canvas.tsx: `scenes` = `[{ at: <frame>, el: <one card/>, }]` (one big card per scene, ≤ 4–6 scenes, the camera glides between them), `end` = `{ at, sub, big?, icon? }` for the comment/share card. Use `f(idx("word"))` for `at`. `canvas` (`CanvasReel` in src/canvas.tsx: dotted canvas, white cards with a navy outline and hard shadow, label pill, avatar bottom-left with a speech-bubble caption) is the look of the channel's 34k breakout reel. `collage` (above) got the same reach in testing (1.6k vs 1.3–2k) and has the ready-made example. Neither look moved reach, so don't switch looks to fix reach; fix the hook and the topic. Change the look only as its own experiment.
 
 ## House style
 - **Collage:** paper + dot grid; a 90 px headline that builds word by word (it is the caption, so keep sentences short: ≤ 3 lines); a yellow marker swipe under 1–2 key words per line; a soft colour blob behind the hero that changes per chapter; tilted white cards with tape and a 12 px hard shadow; red rubber `Stamp`s (FREE, FIXED); the avatar as a white-outlined sticker bottom-right that bounces on every beat. Nunito 800/900; Caveat for handwritten notes. Colours come from `channel.json`.
@@ -22,7 +22,7 @@
 - End: the last beats are the comment question (a "comment karo" pill) and the share line (send icon).
 
 ## First-3-seconds check (before the preview)
-Render stills at 0.0 s, 1.0 s, 2.0 s and 2.9 s. Each one must have: ≤ 5 words visible, one big visual, no labels or small text, motion from frame 0, and the headline unchanged before 3 s. Show these 4 frames to the user with the preview.
+Render stills at 0.0 s, 1.0 s, 2.0 s and 2.9 s. Each one must have: ≤ 5 words visible, one big visual, no labels or small text, motion from frame 0, and the headline unchanged before 3 s. **By the 2.0 s still the payoff must be visible** (free, a number, or a tool logo); a question alone isn't a payoff. Show these 4 frames to the user with the preview.
 
 ## Preview gate
 Render one still per scene (frame = a moment when that scene is complete), tile them into a sheet, and show the user **before** the full render:

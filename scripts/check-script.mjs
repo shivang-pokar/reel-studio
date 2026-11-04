@@ -26,11 +26,16 @@ else ok(`~${secs.toFixed(0)} s estimated (target ${minS}–${maxS} s)`);
 const hook = (s.caption.match(/^[^.?!]+[.?!]?/) ?? [""])[0].trim();
 const hw = hook.split(/\s+/).filter(Boolean).length;
 hw <= 10 ? ok(`hook ${hw} words: "${hook}"`) : warn(`hook is ${hw} words, aim for ≤ 8–10: "${hook}"`);
-/\d|free|₹|\$|lakh|crore|%/i.test(hook) ? ok("hook has a number / money / 'free'") : warn("hook has no number, money or 'free'; add one, or make sure a tool name is in it");
+// the opening = first two sentences (~2–3 s spoken): Reel 1 said "Free" in its second sentence
+const opening = (s.caption.match(/^[^.?!]+[.?!]?\s*[^.?!]*[.?!]?/) ?? [""])[0].trim();
+const payoff = /\d|free|₹|\$|lakh|crore|%|rupa/i.test(opening);
+payoff ? ok("opening has a number / money / 'free'") : warn("first two sentences have no number, money or 'free'; add one, or make sure a tool name is in it");
 // the hook must be about the viewer: "Meri reel pe 32k views" passed every other check and got 61% skip
 const self = /\b(main|mai|meri|mera|mere|maine|mujhe|hum|humne|hamara|i|i'm|my|me|we|our)\b/i.test(hook);
-const viewer = /\b(tum|tumhara|tumhari|tumhare|tumhe|tumhein|aap|aapka|aapki|apna|apni|you|your)\b/i.test(hook);
+const viewer = /\b(tum|tumhara|tumhari|tumhare|tumhe|tumhein|aap|aapka|aapki|apna|apni|you|your)\b/i.test(opening);
 if (self && !viewer) fail(`hook is about us, not the viewer ("${hook}"). Rewrite around "tum / tumhara" + their problem or gain`);
+// no payoff and not about the viewer: "App bana liya? Ab live kahan karoge?" got 76% skip
+else if (!viewer && !payoff) fail(`hook has no payoff (number, money, 'free') and doesn't speak to the viewer ("${opening}"). Say what they get in the first 2 s`);
 else viewer ? ok("hook speaks to the viewer") : warn("hook doesn't address the viewer; make sure it names their problem or gain");
 
 const sentences = s.caption.split(/(?<=[.?!])\s+/);
